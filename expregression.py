@@ -39,6 +39,12 @@ def expf(x):
 
 expmodel = list(map(expf, x))
 
+
+known_x = 2033
+prediction = expf(known_x)
+print("Predicted for " + str(known_x) + " = " + str(prediction))
+print (prediction)
+
 plt.scatter(x,y)
 plt.plot(x,expmodel)
 

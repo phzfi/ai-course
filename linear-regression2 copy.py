@@ -25,6 +25,15 @@ def func(x):
 
 linmodel = list(map(func, years))
 
+known_x = 2033
+prediction = func(known_x)
+print("Predicted for " + str(known_x) + " = " + str(prediction))
+print (prediction)
+
 plt.scatter(years,c)
 plt.plot(years, linmodel)
 plt.show()
+
+#predict the new values using the regression:
+
+

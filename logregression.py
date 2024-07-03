@@ -31,6 +31,12 @@ print (logf(12))
 logmodel = list(map(logf, x))
 print (logmodel)
 
+known_x = 2033
+prediction = logf(known_x)
+print("Predicted for " + str(known_x) + " = " + str(prediction))
+print (prediction)
+
+
 plt.scatter(x,y)
 
 plt.plot(x, logmodel)
