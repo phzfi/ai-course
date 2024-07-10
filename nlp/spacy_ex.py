@@ -334,5 +334,54 @@ for chunk in about_talk_doc.noun_chunks:
     print (chunk)
 
 
+
+
+
+
+'''# voidaan tehdä myös ns. sentiment analysis
+# Eli onko teksti positiivinen vai negatiivinen esim.
+'''
+
+# the following installations are required
+# python -m textblob.download_corpora
+# python -m spacy download en_core_web_sm
+
+import spacy
+from spacytextblob.spacytextblob import SpacyTextBlob
+
+nlp = spacy.load('en_core_web_sm')
+nlp.add_pipe('spacytextblob')
+text = 'I had a really horrible day. It was the worst day ever!'
+' But every now and then I have a really good day that makes me happy.'
+doc = nlp(text)
+print(doc._.blob.polarity)
+print(doc._.blob.subjectivity)
+print(doc._.blob.sentiment_assessments.assessments)
+doc._.blob.ngrams()
+
+
+'''# voidaan tehdä myös ns. sentiment analysis
+# Eli onko teksti positiivinen vai negatiivinen esim.
+'''
+
+# the following installations are required
+# python -m textblob.download_corpora
+# python -m spacy download en_core_web_sm
+
+import spacy
+from spacytextblob.spacytextblob import SpacyTextBlob
+
+nlp = spacy.load('en_core_web_sm')
+nlp.add_pipe('spacytextblob')
+text = 'The experience was really good. I can recommend'
+' this restaurant without hesitation. The only issue I had'
+' was that the salt shaker was missing but the staff '
+' went out of their way to buy a new one just for me!'
+doc = nlp(text)
+print(doc._.blob.polarity)
+print(doc._.blob.subjectivity)
+print(doc._.blob.sentiment_assessments.assessments)
+doc._.blob.ngrams()
+
 # Voidaan piirtää käppyröitä tekstin sisällöstä. Ks. https://spacy.io/api/top-level#displacy_options
 #displacy.serve(doc, style="dep")
